@@ -15,13 +15,15 @@ resource "aws_instance" "web" {
    associate_public_ip_address = true
 }
 
-resource "aws_instance" "back" {
-   ami			= "ami-0ebbf2179e615c338"
-   instance_type 	= "t2.micro"
-   security_groups 	= ["${aws_security_group.allow_ssh.id}"]
-   key_name		= "liver"
-   subnet_id		= "${aws_subnet.PN2.id}"
-}
+# resource "aws_instance" "back" {
+#   ami			= "ami-0ebbf2179e615c338"
+#   instance_type 	= "t2.micro"
+#   security_groups 	= ["${aws_security_group.allow_ssh.id}"]
+#   key_name		= "liver"
+#   subnet_id		= "${aws_subnet.PN2.id}"
+#}
+
+
 
 resource "aws_eip" "bastion" {
    vpc 			= true
